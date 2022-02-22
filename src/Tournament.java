@@ -13,7 +13,7 @@ public class Tournament {
 
     private static final int maxTime = 10;//10    // number of seconds allowed per card.
     private static final int overTime = 60;//60   // number of seconds before player forfeits all hands.
-    private static final int numMatches = 50; // number of hands between each player pair.
+    private static final int numMatches = 100; // number of hands between each player pair.
     private static final Player LOSER = LoserP.getPlayer();
 
     private static class Contestant implements Comparable<Contestant> {
@@ -32,10 +32,13 @@ public class Tournament {
     }
 
     private static final Contestant[] contestants = {
-            //new Contestant(SmartyP.getPlayer(), "SmartyP"),
-            new Contestant(StratyG.getPlayer(), "StratyG"),
-            new Contestant(CharlesS.getPlayer(),"CharlesS"),
             //new Contestant(RandyP.getPlayer(), "RandyP"),
+            //new Contestant(SmartyP.getPlayer(), "SmartyP"),
+            new Contestant(CharlesS.getPlayer(),"CharlesS"),
+            new Contestant(CharlesE.getPlayer(),"CharlesE"),
+            //new Contestant(StratyG.getPlayer(), "StratyG"),
+
+            //new Contestant(CharlesB.getPlayer(),"CharlesB"),
 
             // new Contestant(DonaldS.getPlayer(), "DonaldS"),
             // new Contestant(AmandaS.getPlayer(),"Amanda"),

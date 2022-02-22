@@ -7,8 +7,8 @@
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class CharlesS {
-    public static Player getPlayer() { return new CharlesS.CharlesSchuck(); }
+public class CharlesE {
+    public static Player getPlayer() { return new CharlesE.CharlesSchuck(); }
 
     public static class CharlesSchuck implements Player{
         final int allTime = 9995; //maximum thinking time. (9995)
@@ -25,9 +25,9 @@ public class CharlesS {
             Node resultN = alphaBetaParkingLot(state, true, alpha, beta, time);
 
             if(System.currentTimeMillis() > time + allTime){
-                System.out.println("CS OT P1: " + (System.currentTimeMillis() - time));
+                System.out.println("CE P1");
             }
-            System.out.println("CS P1: " + (System.currentTimeMillis() - time));
+
             return resultN.getPlay();
         }
 
@@ -41,9 +41,9 @@ public class CharlesS {
             Node resultN = alphaBetaParkingLot(state, false, alpha, beta, time);
 
             if(System.currentTimeMillis() > time + allTime){
-                System.out.println("CS OT P2: " + (System.currentTimeMillis() - time));
+                System.out.println("CE P2");
             }
-            System.out.println("CS P2: " + (System.currentTimeMillis() - time));
+
             return resultN.getPlay();
         }
 
@@ -78,12 +78,12 @@ public class CharlesS {
                         bestEvaluation = tempEvaluation;
                         bestPlay = child;
                     }
-                    //if(tempEvaluation > alpha){
-                    //    alpha = tempEvaluation;
-                    //}
-                    //if(beta <= alpha){
-                    //    break;
-                    //}
+                    if(tempEvaluation > alpha){
+                        alpha = tempEvaluation;
+                    }
+                    if(beta <= alpha){
+                        break;
+                    }
 
                 }
             }
@@ -119,12 +119,12 @@ public class CharlesS {
                             bestEvaluation = tempEvaluation;
                             bestPlay = child;
                         }
-                        //if(tempEvaluation < beta){
-                        //    beta = tempEvaluation;
-                        //}
-                        //if(beta <= alpha){
-                        //    break;
-                        //}
+                        if(tempEvaluation < beta){
+                            beta = tempEvaluation;
+                        }
+                        if(beta <= alpha){
+                            break;
+                        }
                     }
                 }
             }
@@ -186,14 +186,6 @@ public class CharlesS {
                     }
                 }
             }
-
-            //let's try and remove useless cards from this pile... let's remove cards that are likely to be trivial.
-            //they're all in order right now... we can use that to our advantage.
-
-            for(int i = 0, removeCount = 0; i < remainingCards.size() && removeCount < 12; i++){
-                //remove the most trivial lads.
-            }
-
         }
 
         public void assume(){
