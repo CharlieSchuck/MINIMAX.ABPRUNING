@@ -35,7 +35,6 @@ public class Tournament {
             //new Contestant(RandyP.getPlayer(), "RandyP"),
             //new Contestant(SmartyP.getPlayer(), "SmartyP"),
             new Contestant(CharlesS.getPlayer(),"CharlesS"),
-            new Contestant(CharlesE.getPlayer(),"CharlesE"),
             //new Contestant(StratyG.getPlayer(), "StratyG"),
 
             //new Contestant(CharlesB.getPlayer(),"CharlesB"),
